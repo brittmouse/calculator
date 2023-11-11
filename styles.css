@@ -6,7 +6,7 @@
 .calculator {
   background-color: #666;
   padding: 12px;
-  border-radius: 6px;
+  border-radius: 12px;
   width: 250px;
   display: flex;
   flex-direction: column;

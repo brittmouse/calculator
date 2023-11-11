@@ -1,14 +1,15 @@
 const display = document.querySelector(".display");
-display.innerHTML = "";
+display.innerText = "";
+
+const handleNumClick = function(btn) {
+  display.innerText += btn.innerText;
+}
 
 const numButtons = document.querySelectorAll(".num");
 for (let i = 0; i < numButtons.length; i++) {
-  numButtons[i].addEventListener("click", handleNumClick(numButtons[i].innerHTML));
-}
-
-function handleNumClick(text) {
-  // if (text !== ".") Number(text);
-  display.innerHTML += text;
+  numButtons[i].addEventListener("click", function() {
+    handleNumClick(numButtons[i]);
+  });
 }
 
 const operate = function(x, operator, y) {
