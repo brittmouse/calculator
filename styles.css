@@ -18,14 +18,14 @@
   align-items: space-between;
 }
 
-.num, .operator, .calculate, .display {
+#clear, .num, .operator, .calculate, .display {
   padding: 18px;
   border: 1px solid #ddd;
   border-radius: 8px;
   margin: 4px;
 }
 
-.num {
+.num, #clear {
   background-color: #ddd;
 }
 
@@ -43,5 +43,6 @@
   background-color: #eee;
   font-size: 24px;
   padding: 18px 12px;
+  height: 24px;
   text-align: right;
 }
