@@ -15,13 +15,15 @@ const multiply = (x, y) => x * y;
 const divide = (x, y) => x / y;
 
 const handleNumClick = function(btn) {
-  display.innerText += btn.innerText;
-  mathStr += btn.innerText;
+  if (btn.innerText === "." && !display.innerHTML.includes(".")
+    || btn.innerText !== ".") {
+    display.innerText += btn.innerText;
+    mathStr += btn.innerText;
+  }
 }
 
 const handleOprClick = function(btn) {
-  // Add "multipleDecimal" check so something like 123.4.56 is not accepted
-  display.innerText = `${btn.innerText} `;
+  display.innerText = ` ${btn.innerText} `;
   mathStr += ` ${btn.innerText} `;
 }
 
@@ -30,7 +32,10 @@ const handleCalcClick = function() {
   let numA = Number(mathArray[0]);
   let numB = Number(mathArray[2]);
   let oper = mathArray[1];
-  display.innerText = operate(numA, oper, numB).toString();
+  if (numB) {
+    display.innerText = operate(numA, oper, numB).toString();
+    mathStr = display.innerText;
+  }
 }
 
 const numBtns = document.querySelectorAll(".num");
